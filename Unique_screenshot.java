@@ -11,10 +11,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
 
-public class Amazon_screenshot1 {
+import dev.failsafe.internal.util.Maths;
 
-	public static void main(String[] args) throws InterruptedException, IOException {
-		// TODO Auto-generated method stub
+public class Unique_screenshot {
+
+	public static void main(String[] args) throws IOException, InterruptedException
+	{
 		ChromeDriver driver=new ChromeDriver();
 		driver.get("https://www.amazon.in/");
 		driver.manage().window().maximize();
@@ -28,10 +30,9 @@ public class Amazon_screenshot1 {
 		
 		TakesScreenshot t1 = driver;
 		File source = t1.getScreenshotAs(OutputType.FILE);
-		File destination = new File("C:\\Users\\Disha Chauhan\\Pictures\\Screenshots\\AB44\\screen1.png");
+		File destination = new File("C:\\Users\\Disha Chauhan\\Pictures\\Screenshots\\AB44\\screen"+Math.random()+".png");
 		FileHandler.copy(source, destination);
-		
-		
+
 
 	}
 
